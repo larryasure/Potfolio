@@ -13,9 +13,6 @@ import {
   mongodb,
   git,
   figma,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
 } from "../assets";
 
@@ -99,7 +96,6 @@ const technologies = [
     name: "figma",
     icon: figma,
   },
-
 ];
 const experiences = [
   {
@@ -157,70 +153,67 @@ const testimonials = [
   },
 ];
 
-const projects = [
+const projectss = [
   {
-    name: "Car Rent",
+    name: "Welcome Studio",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Webinar platform for marketers with interactive hosting and engagement tools designed to drive revenue.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "framer-motion", color: "green-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: welcomeStudioImage,
+    source_code_link: "https://github.com/larryasure/welcome-studio",
   },
   {
-    name: "Job IT",
+    name: "Gravity Trading Platform",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Automated quantitative trading software providing 24/7 liquidity across 170+ crypto assets and exchanges.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "framer-motion", color: "green-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: gravityImage,
+    source_code_link: "https://github.com/larryasure/gravity-trading-platform",
   },
   {
-    name: "Trip Guide",
+    name: "Zaira Restaurant",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Modern restaurant website with food categories, menu browsing, and seamless ordering experience.",
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "tailwind", color: "green-text-gradient" },
+      { name: "lucide-react", color: "pink-text-gradient" },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: zairaImage,
+    source_code_link: "https://github.com/larryasure/zaira-restaurant",
+  },
+  {
+    name: "Listrace",
+    description:
+      "Comprehensive discovery platform to find and explore restaurants, hotels, destinations, and local businesses in one place.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "tailwind", color: "green-text-gradient" },
+      { name: "lucide-react", color: "pink-text-gradient" },
+    ],
+    image: listraceImage,
+    source_code_link: "https://github.com/larryasure/listrace",
+  },
+  {
+    name: "Smoothie Shop",
+    description:
+      "Smoothie ordering app with interactive product carousel and pricing showcase for delicious juice blends.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "swiper", color: "green-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
+    ],
+    image: smoothieImage,
+    source_code_link: "https://github.com/larryasure/smoothie-shop",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, testimonials, projectss };
