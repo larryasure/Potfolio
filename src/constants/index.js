@@ -19,6 +19,7 @@ import {
   movieAppImage,
   listraceImage,
   gravityImage,
+  portfolioImage
 } from "../assets";
 
 export const navLinks = [
@@ -157,8 +158,6 @@ const testimonials = [
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
-
-
 const projectss = [
   {
     name: "Welcome Studio",
@@ -169,7 +168,7 @@ const projectss = [
       { name: "tailwind", color: "pink-text-gradient" },
     ],
     image: welcomeStudioImage,
-    source_code_link: "https://github.com/larryasure/welcome-studio",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -181,7 +180,7 @@ const projectss = [
       { name: "tailwind", color: "pink-text-gradient" },
     ],
     image: gravityImage,
-    source_code_link: "https://github.com/larryasure/gravity-trading-platform",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -193,7 +192,7 @@ const projectss = [
       { name: "lucide-react", color: "pink-text-gradient" },
     ],
     image: zairaImage,
-    source_code_link: "https://github.com/larryasure/zaira-restaurant",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -205,7 +204,7 @@ const projectss = [
       { name: "lucide-react", color: "pink-text-gradient" },
     ],
     image: listraceImage,
-    source_code_link: "https://github.com/larryasure/listrace",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -214,12 +213,26 @@ const projectss = [
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "tmdb-api", color: "green-text-gradient" },
+      { name: "firebase", color: "blue-text-gradient" },
       { name: "tailwind", color: "pink-text-gradient" },
     ],
     image: movieAppImage,
-    source_code_link: "https://github.com/larryasure/movie-app",
+    source_code_link: "https://github.com/larryasure",
   },
 
+  {
+  name: "Portfolio",
+  description: "My personal portfolio website showcasing all my projects and skills.",
+  tags: [
+    { name: "react", color: "blue-text-gradient" },
+    { name: "three.js", color: "green-text-gradient" },
+    { name: "react drei", color: "pink-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
+
+  ],
+  image: portfolioImage,
+  source_code_link: "https://github.com/larryasure",
+}
 ];
 
 export { services, technologies, experiences, testimonials, projectss };

@@ -52,7 +52,7 @@ export default function Experience() {
 
   return (
     <>
-      <section className={`${styles.paddingY}`}>
+      <section className={`${styles.paddingY} mt-20 `}>
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>What I have done so far</p>
           <h2 className={styles.sectionHeadText}>Work Experience.</h2>

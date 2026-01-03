@@ -1,6 +1,5 @@
 import React from "react";
 import { BallCanvas } from "./canvas";
-import { textVariant } from "../utils/motion";
 import { technologies } from "../constants";
 
 export default function Tech() {

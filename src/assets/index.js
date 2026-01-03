@@ -31,6 +31,8 @@ import movieAppImage from "./movieAppImage.png";
 import zairaImage from "./zairaImage.png";
 import listraceImage from "./listraceImage.png";
 import gravityImage from "./gravityImage.png";
+import portfolioImage from "./portfolioImage.png";
+
 
 export {
   welcomeStudioImage,
@@ -63,4 +65,5 @@ export {
   shopify,
   starbucks,
   tesla,
+  portfolioImage
 };
