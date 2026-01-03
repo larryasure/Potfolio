@@ -26,11 +26,18 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import welcomeStudioImage from "./welcomeStudioImage.png";
+import movieAppImage from "./movieAppImage.png";
+import zairaImage from "./zairaImage.png";
+import listraceImage from "./listraceImage.png";
+import gravityImage from "./gravityImage.png";
 
 export {
+  welcomeStudioImage,
+  zairaImage,
+  listraceImage,
+  movieAppImage,
+  gravityImage,
   logo,
   backend,
   creator,
@@ -56,7 +63,4 @@ export {
   shopify,
   starbucks,
   tesla,
-  carrent,
-  jobit,
-  tripguide,
 };

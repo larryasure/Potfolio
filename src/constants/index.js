@@ -14,6 +14,11 @@ import {
   git,
   figma,
   threejs,
+  welcomeStudioImage,
+  zairaImage,
+  movieAppImage,
+  listraceImage,
+  gravityImage,
 } from "../assets";
 
 export const navLinks = [
@@ -153,11 +158,11 @@ const testimonials = [
   },
 ];
 
+
 const projectss = [
   {
     name: "Welcome Studio",
-    description:
-      "Webinar platform for marketers with interactive hosting and engagement tools designed to drive revenue.",
+    description: "Webinar platform for marketers with interactive hosting and engagement tools designed to drive revenue.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "framer-motion", color: "green-text-gradient" },
@@ -166,10 +171,10 @@ const projectss = [
     image: welcomeStudioImage,
     source_code_link: "https://github.com/larryasure/welcome-studio",
   },
+
   {
     name: "Gravity Trading Platform",
-    description:
-      "Automated quantitative trading software providing 24/7 liquidity across 170+ crypto assets and exchanges.",
+    description: "Automated quantitative trading software providing 24/7 liquidity across 170+ crypto assets and exchanges.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "framer-motion", color: "green-text-gradient" },
@@ -178,10 +183,10 @@ const projectss = [
     image: gravityImage,
     source_code_link: "https://github.com/larryasure/gravity-trading-platform",
   },
+
   {
     name: "Zaira Restaurant",
-    description:
-      "Modern restaurant website with food categories, menu browsing, and seamless ordering experience.",
+    description: "Modern restaurant website with food categories, menu browsing, and seamless ordering experience.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "tailwind", color: "green-text-gradient" },
@@ -190,10 +195,10 @@ const projectss = [
     image: zairaImage,
     source_code_link: "https://github.com/larryasure/zaira-restaurant",
   },
+
   {
     name: "Listrace",
-    description:
-      "Comprehensive discovery platform to find and explore restaurants, hotels, destinations, and local businesses in one place.",
+    description: "Comprehensive discovery platform to find and explore restaurants, hotels, destinations, and local businesses in one place.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "tailwind", color: "green-text-gradient" },
@@ -202,18 +207,19 @@ const projectss = [
     image: listraceImage,
     source_code_link: "https://github.com/larryasure/listrace",
   },
+
   {
-    name: "Smoothie Shop",
-    description:
-      "Smoothie ordering app with interactive product carousel and pricing showcase for delicious juice blends.",
+    name: "Movie App",
+    description: "Movie discovery app powered by TMDB API. Browse, search, and discover movies with ratings, languages, and release dates.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
-      { name: "swiper", color: "green-text-gradient" },
+      { name: "tmdb-api", color: "green-text-gradient" },
       { name: "tailwind", color: "pink-text-gradient" },
     ],
-    image: smoothieImage,
-    source_code_link: "https://github.com/larryasure/smoothie-shop",
+    image: movieAppImage,
+    source_code_link: "https://github.com/larryasure/movie-app",
   },
+
 ];
 
 export { services, technologies, experiences, testimonials, projectss };
