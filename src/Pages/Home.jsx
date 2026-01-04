@@ -9,13 +9,14 @@ import {
   Contact,
 } from "../components";
 import { styles } from "../styles";
+import Stars from "../components/canvas/Stars";
 
 export default function Home() {
   return (
     <>
-      <div className={`hero-bg z-10 ${styles.paddingX} ${styles.paddingY} `}  >
+      <div className={`relative z-10 ${styles.paddingX} ${styles.paddingY}`}>
         <Hero />
-        <About/>
+        <About />
         <Experience />
         <Tech />
         <Works />

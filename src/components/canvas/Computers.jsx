@@ -35,6 +35,7 @@ export default function ComputersCanvas() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{ cursor: hovered ? "grab" : "auto" }}
+      dpr={[1, 1.5]} performance={{ min: 0.5, max: 1 }}
     >
       <Suspense fallback={<Loader />}>
         <OrbitControls
