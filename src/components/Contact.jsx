@@ -5,26 +5,65 @@ import StarsCanvas from "./canvas/Stars";
 import { slideIn } from "../utils/motion";
 import { styles } from "../styles";
 import { motion } from "framer-motion";
-
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [loading, setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      toast.error("Please Fill all the fields");
+      return;
+    }
 
-    emailjs.send("service_8yi1n2b", "template_um7bjiv" {
-      from_name: form.name,
-      to_name: "Lanre",
-      from_email: form.email,
-      to_email: "olascolanre@gmail.com",
-      message: form.message
-    },
-      "GnmuxVj7d_pGrrF_k"
-      
-    )
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(form.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    if (form.message.length < 15) {
+      toast.error("Message must be at least 15 characters");
+      return;
+    }
+
+    if (form.message.length > 500) {
+      toast.error("Message must not exceed 500 characters");
+      return;
+    }
+
+    setLoading(true);
+
+    emailjs
+      .send(
+        "service_8yi1n2b",
+        "template_um7bjiv",
+        {
+          from_name: form.name,
+          to_name: "Lanre",
+          from_email: form.email,
+          to_email: "olascolanre@gmail.com",
+          message: form.message,
+        },
+        "GnmuxVj7d_pGrrF_k"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          toast.success(
+            "Thank You, I will get back to you as soon as possible!!"
+          );
+          setForm({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          toast.error("Opps!! Something went wrong.");
+        }
+      );
   };
 
   const handleChange = (e) => {
@@ -81,6 +120,7 @@ export default function Contact() {
                   Your Message
                 </span>
                 <textarea
+                  maxLength={500}
                   name="message"
                   value={form.message}
                   onChange={handleChange}
