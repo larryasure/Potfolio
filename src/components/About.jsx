@@ -36,7 +36,7 @@ export default function About() {
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.45 }}
+        viewport={{ once: true, amount: 0.2 }}
         className={` relative z-0 `}
       >
         <motion.div variants={textVariant()}>

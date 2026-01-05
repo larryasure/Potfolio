@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, SpotLight, useGLTF } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 import Loader from "../Loader";
 
@@ -11,9 +11,8 @@ function Computers() {
 
   return (
     <group ref={meshRef} scale={isMobile ? 0.8: 1 } position={[-1.0, 0, 0]}>
-      <hemisphereLight intensity={6.14} groundColor="gray" />
-      <pointLight intensity={5} position={[-2, 0, 0]} />
-      <SpotLight position={[-20, 50, 10]} castShadow />
+      <hemisphereLight intensity={2} groundColor="gray" />
+      <pointLight intensity={2} position={[-2, 0, 0]} />
       <primitive
         object={computer.scene}
         scale={isMobile? 0.55: 0.80}
@@ -29,13 +28,13 @@ export default function ComputersCanvas() {
   return (
     <Canvas
       frameloop="demand"
-      shadows
       camera={{ position: [1, 7, 24], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true, antialias: false }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{ cursor: hovered ? "grab" : "auto" }}
-      dpr={[1, 1.5]} performance={{ min: 0.5, max: 1 }}
+      dpr={[1, 1]}
+      performance={{ min: 0.5, max: 1 }}
     >
       <Suspense fallback={<Loader />}>
         <OrbitControls
