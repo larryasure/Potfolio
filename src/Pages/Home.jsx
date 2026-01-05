@@ -10,6 +10,7 @@ import {
 } from "../components";
 import { styles } from "../styles";
 import Stars from "../components/canvas/Stars";
+import Footer from "../Components/Footer";
 
 export default function Home() {
   return (

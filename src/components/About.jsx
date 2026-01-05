@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import React from "react";
 import { Tilt } from "react-tilt";
 import { styles } from "../styles";
 import { services } from "../constants";
@@ -7,7 +6,7 @@ import { fadeIn, staggerContainer, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ title, icon, index }) => {
   return (
-   <Tilt
+    <Tilt
       options={{
         max: 45,
         scale: 1,
