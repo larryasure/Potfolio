@@ -7,14 +7,7 @@ import { fadeIn, staggerContainer, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ title, icon, index }) => {
   return (
-    <Tilt
-      options={{
-        max: 45,
-        scale: 1,
-        speed: 450,
-      }}
-      className="w-full sm:w-65 "
-    >
+    <Tilt className="w-full sm:w-65 ">
       <motion.div
         variants={fadeIn("right", "spring", 0.3 * index, 0.75)}
         className="w-full rounded-[20px] cursor-pointer bg-gray-800 p-px"
@@ -60,7 +53,7 @@ export default function About() {
         <div id="about" className="mt-10 flex flex-wrap gap-7">
           {services.map((service, index) => (
             <ServiceCard key={service.title} index={index} {...service} />
-          ))};
+          ))}
         </div>
       </motion.section>
     </>
