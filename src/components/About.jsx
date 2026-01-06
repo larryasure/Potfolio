@@ -60,7 +60,7 @@ export default function About() {
         <div id="about" className="mt-10 flex flex-wrap gap-7">
           {services.map((service, index) => (
             <ServiceCard key={service.title} index={index} {...service} />
-          ))}
+          ))};
         </div>
       </motion.section>
     </>
