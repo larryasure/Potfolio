@@ -11,10 +11,9 @@ function Computers() {
 
   return (
     <group ref={meshRef} scale={isMobile ? 0.8: 1 } position={[-1.0, 0, 0]}>
-      {/* ONLY lights fixed for weaker GPUs */}
+      <ambientLight intensity={0.4} />
       <hemisphereLight intensity={1} groundColor="gray" />
       <pointLight intensity={1} position={[-2, 0, 0]} />
-
       <primitive
         object={computer.scene}
         scale={isMobile? 0.55: 0.80}
@@ -27,6 +26,7 @@ function Computers() {
 
 export default function ComputersCanvas() {
   const [hovered, setHovered] = useState(false);
+
   return (
     <Canvas
       frameloop="demand"
@@ -35,7 +35,7 @@ export default function ComputersCanvas() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{ cursor: hovered ? "grab" : "auto" }}
-      dpr={[1, 1]}
+      dpr={[1, 1.5]}
       performance={{ min: 0.5, max: 1 }}
     >
       <Suspense fallback={<Loader />}>
