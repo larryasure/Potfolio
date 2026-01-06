@@ -9,8 +9,8 @@ import {
   Contact,
 } from "../components";
 import { styles } from "../styles";
-import Stars from "../components/canvas/Stars";
 import Footer from "../Components/Footer";
+
 
 export default function Home() {
   return (
@@ -23,6 +23,7 @@ export default function Home() {
         <Works />
         <Feedbacks />
         <Contact />
+        <Footer/>
       </div>
     </>
   );
