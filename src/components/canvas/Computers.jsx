@@ -11,8 +11,10 @@ function Computers() {
 
   return (
     <group ref={meshRef} scale={isMobile ? 0.8: 1 } position={[-1.0, 0, 0]}>
-      <hemisphereLight intensity={2} groundColor="gray" />
-      <pointLight intensity={2} position={[-2, 0, 0]} />
+      {/* ONLY lights fixed for weaker GPUs */}
+      <hemisphereLight intensity={1} groundColor="gray" />
+      <pointLight intensity={1} position={[-2, 0, 0]} />
+
       <primitive
         object={computer.scene}
         scale={isMobile? 0.55: 0.80}
