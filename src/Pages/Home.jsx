@@ -9,8 +9,6 @@ import {
   Contact,
 } from "../components";
 import { styles } from "../styles";
-import Footer from "../components/Footer";
-
 
 export default function Home() {
   return (
@@ -23,7 +21,6 @@ export default function Home() {
         <Works />
         <Feedbacks />
         <Contact />
-        <Footer/>
       </div>
     </>
   );
