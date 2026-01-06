@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
+
 import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, staggerContainer, textVariant } from "../utils/motion";
@@ -45,15 +46,15 @@ export default function About() {
         </motion.div>
 
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={fadeIn("up", "tween", 0.1, 1)}
           className="md:mt-4 text-[17px] leading-7 text-gray-300 max-w-2xl md:max-w-3xl"
         >
-          I'm a developer passionate about creating interactive and engaging web
-          experiences. I specialize in building modern web applications with
-          React, crafting responsive designs that work seamlessly across all
-          devices, and bringing 3D visuals to life on the web using Three.js. I
-          focus on clean code, user-friendly interfaces, and turning ideas into
-          functional digital products.
+          I'm a developer excited about building interactive web experiences. In
+          the past few months, I've been learning and creating projects with
+          React, experimenting with responsive designs, and exploring 3D visuals
+          on the web using Three.js. I enjoy turning ideas into small,
+          functional digital products and continually improving my skills along
+          the way.
         </motion.p>
 
         <div id="about" className="mt-10 flex flex-wrap gap-7">
