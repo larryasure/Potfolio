@@ -28,7 +28,7 @@ import tesla from "./company/tesla.png";
 
 import welcomeStudioImage from "./welcomeStudioImage.png";
 import movieAppImage from "./movieAppImage.png";
-import zairaImage from './zairaImage.png'
+import zairaImage from './ZairaImage.png'
 import listraceImage from "./listraceImage.png";
 import gravityImage from "./gravityImage.png";
 import portfolioImage from "./portfolioImage.png";
