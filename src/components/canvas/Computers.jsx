@@ -4,39 +4,22 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 import Loader from "../Loader";
 
-// function Computers() {
-//   const computer = useGLTF("/desktop_pc/scene.gltf");
-//   const meshRef = useRef();
-//   const isMobile = window.innerWidth < 760;
-
-//   return (
-//     <group ref={meshRef} scale={isMobile ? 0.6 : 1} position={[-1.0, 0, 0]}>
-//       <ambientLight intensity={0.3} />
-//       <hemisphereLight intensity={3.8} groundColor="gray" />
-//       <pointLight intensity={0.8} position={[-2, 0, 0]} />
-//       <primitive
-//         object={computer.scene}
-//         scale={isMobile ? 0.4 : 0.8}
-//         position={isMobile ? [2.0, -0.5, -1] : [2, -3.5, -0.9]}
-//         rotation={[0, -1.5, -0.1]}
-//       />
-//     </group>
-//   );
-// }
-
 function Computers() {
+  const computer = useGLTF("/desktop_pc/scene.gltf");
   const meshRef = useRef();
   const isMobile = window.innerWidth < 760;
 
   return (
     <group ref={meshRef} scale={isMobile ? 0.6 : 1} position={[-1.0, 0, 0]}>
       <ambientLight intensity={0.3} />
-      <hemisphereLight intensity={0.8} groundColor="gray" />
-      <pointLight intensity={0.4} position={[-2, 0, 0]} />
-      <mesh>
-        <boxGeometry args={[2, 2, 2]} />
-        <meshStandardMaterial color="orange" />
-      </mesh>
+      <hemisphereLight intensity={3.8} groundColor="gray" />
+      <pointLight intensity={0.8} position={[-2, 0, 0]} />
+      <primitive
+        object={computer.scene}
+        scale={isMobile ? 0.4 : 0.8}
+        position={isMobile ? [2.0, -0.5, -1] : [2, -3.5, -0.9]}
+        rotation={[0, -1.5, -0.1]}
+      />
     </group>
   );
 }
