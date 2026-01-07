@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
+      <nav 
         className={`${styles.paddingX} flex w-full items-center justify-between py-5 sticky top-0 z-20 bg-black `}
       >
         <div className=" ">

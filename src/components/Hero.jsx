@@ -6,7 +6,7 @@ import { ComputersCanvas } from "./canvas";
 export default function Hero() {
   return (
     <>
-      <section className="relative w-full h-screen mx-auto">
+      <section  className="relative w-full h-screen mx-auto">
         <div className="absolute inset-0 bg-[#0d0c0c94] h-full w-full z-0"></div>
         <div
           className={`${styles.paddingX} absolute inset-0 max-w-7xl mx-auto flex flex-row items-start gap-5`}
@@ -16,7 +16,7 @@ export default function Hero() {
             <div className="w-1 sm:h-80 h-40 bg-linear-90 from-[#804dee] to-[#3c335000]" />
           </div>
 
-          <div>
+          <div >
             <h1 className={`${styles.heroHeadText} text-white`}>
               Hi, I'm <span className="text-[#915EFF]">Lanre</span>
             </h1>
@@ -33,7 +33,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <ComputersCanvas />
+        <ComputersCanvas  />
 
         <div className="relative w-full flex items-center justify-center bottom-70 sm:bottom-50 md:bottom-18 lg:bottom-32 xl:bottom-18">
           <a href="#about">

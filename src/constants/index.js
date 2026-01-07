@@ -19,7 +19,7 @@ import {
   movieAppImage,
   listraceImage,
   gravityImage,
-  portfolioImage
+  portfolioImage,
 } from "../assets";
 
 export const navLinks = [
@@ -30,6 +30,11 @@ export const navLinks = [
   {
     id: "work",
     title: "Work",
+  },
+
+  {
+    id: "projects",
+    title: "Projects",
   },
   {
     id: "contact",
@@ -135,15 +140,15 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
+      "I thought it was impossible to make a website as beautiful as our product, but Lanre proved me wrong.",
+    name: "Margaret Thatcher ",
     designation: "CFO",
     company: "Acme Co",
     image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+      "I've never met a web developer who truly cares about their clients' success like Lanre does.",
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
@@ -151,8 +156,8 @@ const testimonials = [
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
+      "After Lanre optimized our website, our traffic increased by 50%. We can't thank him enough!",
+    name: "Jessicca Pearson",
     designation: "CTO",
     company: "456 Enterprises",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
@@ -161,7 +166,8 @@ const testimonials = [
 const projectss = [
   {
     name: "Welcome Studio",
-    description: "Webinar platform for marketers with interactive hosting and engagement tools designed to drive revenue.",
+    description:
+      "Webinar platform for marketers with interactive hosting and engagement tools designed to drive revenue.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "framer-motion", color: "green-text-gradient" },
@@ -173,7 +179,8 @@ const projectss = [
 
   {
     name: "Gravity Trading Platform",
-    description: "Automated quantitative trading software providing 24/7 liquidity across 170+ crypto assets and exchanges.",
+    description:
+      "Automated quantitative trading software providing 24/7 liquidity across 170+ crypto assets and exchanges.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "framer-motion", color: "green-text-gradient" },
@@ -185,7 +192,8 @@ const projectss = [
 
   {
     name: "Zaira Restaurant",
-    description: "Modern restaurant website with food categories, menu browsing, and seamless ordering experience.",
+    description:
+      "Modern restaurant website with food categories, menu browsing, and seamless ordering experience.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "tailwind", color: "green-text-gradient" },
@@ -197,7 +205,8 @@ const projectss = [
 
   {
     name: "Listrace",
-    description: "Comprehensive discovery platform to find and explore restaurants, hotels, destinations, and local businesses in one place.",
+    description:
+      "Comprehensive discovery platform to find and explore restaurants, hotels, destinations, and local businesses in one place.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "tailwind", color: "green-text-gradient" },
@@ -209,7 +218,8 @@ const projectss = [
 
   {
     name: "Movie App",
-    description: "Movie discovery app powered by TMDB API. Browse, search, and discover movies with ratings, languages, and release dates.",
+    description:
+      "Movie discovery app powered by TMDB API. Browse, search, and discover movies with ratings, languages, and release dates.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "tmdb-api", color: "green-text-gradient" },
@@ -221,18 +231,18 @@ const projectss = [
   },
 
   {
-  name: "Portfolio",
-  description: "My personal portfolio website showcasing all my projects and skills.",
-  tags: [
-    { name: "react", color: "blue-text-gradient" },
-    { name: "three.js", color: "green-text-gradient" },
-    { name: "react drei", color: "pink-text-gradient" },
+    name: "Portfolio",
+    description:
+      "My personal portfolio website showcasing all my projects and skills.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "three.js", color: "green-text-gradient" },
+      { name: "react drei", color: "pink-text-gradient" },
       { name: "tailwind", color: "pink-text-gradient" },
-
-  ],
-  image: portfolioImage,
-  source_code_link: "https://github.com/larryasure",
-}
+    ],
+    image: portfolioImage,
+    source_code_link: "https://github.com/larryasure",
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projectss };

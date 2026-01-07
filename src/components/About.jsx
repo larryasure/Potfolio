@@ -8,7 +8,7 @@ import { fadeIn, staggerContainer, textVariant } from "../utils/motion";
 const ServiceCard = ({ title, icon, index }) => {
   return (
     <Tilt className="w-full sm:w-65 ">
-      <motion.div
+      <motion.div 
         variants={fadeIn("right", "spring", 0.3 * index, 0.75)}
         className="w-full rounded-[20px] cursor-pointer bg-gray-800 p-px"
       >
@@ -26,7 +26,7 @@ const ServiceCard = ({ title, icon, index }) => {
 export default function About() {
   return (
     <>
-      <motion.section
+      <motion.section  
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
@@ -38,7 +38,7 @@ export default function About() {
           <h2 className={styles.heroHeadText}>Overview.</h2>
         </motion.div>
 
-        <motion.p
+        <motion.p 
           variants={fadeIn("up", "tween", 0.1, 1)}
           className="md:mt-4 text-[17px] leading-7 text-gray-300 max-w-2xl md:max-w-3xl"
         >
