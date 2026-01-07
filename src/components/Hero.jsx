@@ -26,9 +26,9 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              I build responsive websites, craft
+              I build responsive websites, craft 
               <br className="sm:block hidden" />
-              interfaces and love learning new tech
+               interfaces and love learning new tech
             </motion.p>
           </div>
         </div>
