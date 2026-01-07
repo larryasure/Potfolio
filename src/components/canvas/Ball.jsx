@@ -13,18 +13,21 @@ import CanvasLoader from "../Loader";
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
 
-  if (!decal) return null;
-
   return (
-    <Float speed={9} rotationIntensity={1} floatIntensity={1}>
-      <ambientLight intensity={0.25} />
-      <directionalLight position={[0, 0, 0.25]} intensity={0.5} />
-      <mesh castShadow receiveShadow scale={2.5}>
-        <icosahedronGeometry args={[1, 0]} />
-        <meshPhongMaterial color="#fff8eb" flatShading />
+    <Float speed={3.5} rotationIntensity={0.9} floatIntensity={1}>
+      <ambientLight intensity={0.3} />
+      <directionalLight position={[0, 0, 0.05]} intensity={0.7} />
+      <mesh castShadow receiveShadow scale={2.75}>
+        <icosahedronGeometry args={[1, 1]} />
+        <meshStandardMaterial
+          color="#fff8eb"
+          polygonOffset
+          polygonOffsetFactor={-5}
+          flatShading
+        />
         <Decal
           position={[0, 0, 1]}
-          rotation={[2 * Math.PI, 0, 8.25]}
+          rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
           flatShading
@@ -35,21 +38,17 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
+  const isMobile = window.innerWidth < 760 
+
   return (
     <Canvas
       frameloop="demand"
-      dpr={window.innerWidth < 760 ? 1.2 : [1, 1.9]}
-      performance={{ min: 0.1, max: 0.7 }}
-      gl={{
-        preserveDrawingBuffer: true,
-        antialias: false,
-        alpha: true,
-        powerPreference: "low-power",
-        version: 1,
-      }}
+      dpr={isMobile? 1: [1, 1.9]}
+      performance={{ min: 0.5, max: 1 }}
+      gl={{ preserveDrawingBuffer: true, antialias: false }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={false}  />
         <Ball imgUrl={icon} />
       </Suspense>
       <Preload all />
