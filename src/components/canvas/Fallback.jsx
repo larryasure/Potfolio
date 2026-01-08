@@ -100,7 +100,7 @@ export default function Fallback() {
           onMouseEnter={() => setHoveredButton("work")}
           onMouseLeave={() => setHoveredButton(null)}
           onClick={() => scrollToSection("projects")}
-          className="px-8 py-4 sm:px-10 sm:py-5 bg-gradient-to-r from-[#915EFF] to-[#FF6B9D] text-white rounded-xl font-bold text-lg sm:text-xl hover:shadow-2xl transition-all flex-1"
+          className="px-8 py-4 sm:px-10 sm:py-5 bg-linear-to-r from-[#915EFF] to-[#FF6B9D] text-white rounded-xl font-bold text-lg sm:text-xl hover:shadow-2xl transition-all flex-1"
         >
           <motion.span
             animate={{
