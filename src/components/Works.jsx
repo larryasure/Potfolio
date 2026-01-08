@@ -58,7 +58,7 @@ const ProjectCard = ({
 export default function Works() {
   return (
     <>
-      <section className={styles.paddingY}>
+      <section className={`${styles.paddingY} mt-8`}>
         <motion.div
           variants={textVariant()}
           initial={{ opacity: 0 }}
