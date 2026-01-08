@@ -1,101 +1,77 @@
 import React, { Suspense, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import { useRef } from "react";
-import Loader from "../Loader";
+import {
+  Decal,
+  Float,
+  OrbitControls,
+  Preload,
+  useTexture,
+} from "@react-three/drei";
 
-function Computers() {
-  const computer = useGLTF("/desktop_pc/scene.gltf");
-  const meshRef = useRef();
-  const isMobile = window.innerWidth < 760;
+import CanvasLoader from "../Loader";
+
+const Ball = (props) => {
+  const [decal] = useTexture([props.imgUrl]);
+
+  if (!decal) return null;
 
   return (
-    <group ref={meshRef} scale={isMobile ? 0.6 : 1} position={[-1.0, 0, 0]}>
-      <ambientLight intensity={0.3} />
-      <hemisphereLight intensity={0.8} groundColor="gray" />
-      <pointLight intensity={0.4} position={[-2, 0, 0]} />
-      <primitive
-        object={computer.scene}
-        scale={isMobile ? 0.4 : 0.8}
-        position={isMobile ? [2.0, -0.5, -1] : [2, -3.5, -0.9]}
-        rotation={[0, -1.5, -0.1]}
-      />
-    </group>
+    <Float speed={2} rotationIntensity={0.6} floatIntensity={0.8}>
+      <ambientLight intensity={0.25} />
+      <directionalLight position={[0, 0, 0.05]} intensity={0.5} />
+      <mesh castShadow receiveShadow scale={2.5}>
+        <icosahedronGeometry args={[1, 0]} />
+        <meshPhongMaterial color="#fff8eb" flatShading />
+        <Decal
+          position={[0, 0, 1]}
+          rotation={[2 * Math.PI, 0, 6.25]}
+          scale={1}
+          map={decal}
+          flatShading
+        />
+      </mesh>
+    </Float>
   );
-}
+};
 
-export default function ComputersCanvas() {
-  const [hovered, setHovered] = useState(false);
+const BallCanvas = ({ icon }) => {
   const [isAndroid, setIsAndroid] = useState(false);
-  const [rotation, setRotation] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     setIsAndroid(/android/i.test(navigator.userAgent));
   }, []);
-
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.clientX);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    const diff = e.clientX - startX;
-    setRotation((prev) => prev + diff * 0.3);
-    setStartX(e.clientX);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  useEffect(() => {
-    if (isDragging) {
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
-      return () => {
-        window.removeEventListener("mousemove", handleMouseMove);
-        window.removeEventListener("mouseup", handleMouseUp);
-      };
-    }
-  }, [isDragging, startX]);
 
   if (isAndroid) {
     return (
       <div
         style={{
           width: "100%",
-          height: "400px",
+          height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
-          borderRadius: "8px",
-          cursor: isDragging ? "grabbing" : "grab",
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          borderRadius: "12px",
+          cursor: "pointer",
           transition: "all 0.3s ease",
-          transform: hovered ? "scale(1.05)" : "scale(1)",
+          transform: hovered ? "scale(1.1)" : "scale(1)",
           boxShadow: hovered
-            ? "0 20px 40px rgba(100, 200, 255, 0.3)"
-            : "0 10px 20px rgba(0, 0, 0, 0.3)",
-          userSelect: "none",
+            ? "0 15px 30px rgba(102, 126, 234, 0.4)"
+            : "0 5px 15px rgba(0, 0, 0, 0.2)",
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        onMouseDown={handleMouseDown}
       >
         <img
-          src="/desktop_pc/fallback.jpg"
-          alt="Gaming Desktop"
+          src={icon}
+          alt="tech"
           style={{
-            maxWidth: "80%",
-            maxHeight: "80%",
+            width: "60%",
+            height: "60%",
             objectFit: "contain",
             opacity: hovered ? 0.9 : 1,
             transition: "opacity 0.3s ease",
-            transform: `rotateY(${rotation}deg)`,
-            transformStyle: "preserve-3d",
           }}
         />
       </div>
@@ -105,7 +81,8 @@ export default function ComputersCanvas() {
   return (
     <Canvas
       frameloop="demand"
-      camera={{ position: [1, 7, 24], fov: 25 }}
+      dpr={window.innerWidth < 760 ? 1 : [1, 0.9]}
+      performance={{ min: 0.1, max: 0.4 }}
       gl={{
         preserveDrawingBuffer: true,
         antialias: false,
@@ -113,23 +90,14 @@ export default function ComputersCanvas() {
         powerPreference: "low-power",
         version: 1,
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{ cursor: hovered ? "grab" : "auto" }}
-      dpr={window.innerWidth < 760 ? 1 : [1, 0.8]}
-      performance={{ min: 0.1, max: 0.5 }}
     >
-      <Suspense fallback={<Loader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-          autoRotate
-          autoRotateSpeed={2}
-        />
-        <Computers />
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={4} />
+        <Ball imgUrl={icon} />
       </Suspense>
       <Preload all />
     </Canvas>
   );
-}
+};
+
+export default BallCanvas;

@@ -12,12 +12,12 @@ function Computers() {
   return (
     <group ref={meshRef} scale={isMobile ? 0.6 : 1} position={[-1.0, 0, 0]}>
       <ambientLight intensity={0.3} />
-      <hemisphereLight intensity={0.8} groundColor="gray" />
-      <pointLight intensity={0.4} position={[-2, 0, 0]} />
+      <hemisphereLight intensity={3.8} groundColor="indigo" />
+      <pointLight intensity={0.8} position={[-2, 0, 0]} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.4 : 0.8}
-        position={isMobile ? [2.0, -0.5, -1] : [2, -3.5, -0.9]}
+        scale={isMobile ? 2.7 : 3.3}
+        position={isMobile ? [2.0, -2.5, -1] : [-2, -4.5, 0.9]}
         rotation={[0, -1.5, -0.1]}
       />
     </group>
@@ -116,7 +116,7 @@ export default function ComputersCanvas() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{ cursor: hovered ? "grab" : "auto" }}
-      dpr={window.innerWidth < 760 ? 1 : [1, 0.8]}
+      dpr={window.innerWidth < 760 ? 3 : [1, 4.8]}
       performance={{ min: 0.1, max: 0.5 }}
     >
       <Suspense fallback={<Loader />}>
@@ -124,8 +124,6 @@ export default function ComputersCanvas() {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
-          autoRotate
-          autoRotateSpeed={2}
         />
         <Computers />
       </Suspense>
