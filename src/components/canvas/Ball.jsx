@@ -16,11 +16,11 @@ const Ball = (props) => {
   if (!decal) return null;
 
   return (
-    <Float speed={2} rotationIntensity={0.6} floatIntensity={0.8}>
+    <Float speed={0.4} rotationIntensity={0.6} floatIntensity={0.8}>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} intensity={0.5} />
       <mesh castShadow receiveShadow scale={2.5}>
-        <icosahedronGeometry args={[1, 0]} />
+        <sphereGeometry args={[1, 15, 6]} />
         <meshPhongMaterial color="#fff8eb" flatShading />
         <Decal
           position={[0, 0, 1]}
@@ -67,8 +67,8 @@ const BallCanvas = ({ icon }) => {
           src={icon}
           alt="tech"
           style={{
-            width: "60%",
-            height: "60%",
+            width: "40%",
+            height: "40%",
             objectFit: "contain",
             opacity: hovered ? 0.9 : 1,
             transition: "opacity 0.3s ease",
@@ -81,7 +81,7 @@ const BallCanvas = ({ icon }) => {
   return (
     <Canvas
       frameloop="demand"
-      dpr={window.innerWidth < 760 ? 1 : [1, 0.9]}
+      dpr={window.innerWidth < 760 ? 1.5 : [1, 1.9]}
       performance={{ min: 0.1, max: 0.4 }}
       gl={{
         preserveDrawingBuffer: true,
@@ -92,7 +92,7 @@ const BallCanvas = ({ icon }) => {
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={4} />
+        <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
       </Suspense>
       <Preload all />

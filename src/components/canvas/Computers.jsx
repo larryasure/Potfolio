@@ -1,8 +1,9 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 import Loader from "../Loader";
+import ComputersFallback from "./ComputersSVGFallback"; // import it
 
 function Computers() {
   const computer = useGLTF("/desktop_pc/scene.gltf");
@@ -27,80 +28,12 @@ function Computers() {
 export default function ComputersCanvas() {
   const [hovered, setHovered] = useState(false);
   const [isAndroid, setIsAndroid] = useState(false);
-  const [rotation, setRotation] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setIsAndroid(/android/i.test(navigator.userAgent));
   }, []);
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.clientX);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    const diff = e.clientX - startX;
-    setRotation((prev) => prev + diff * 0.3);
-    setStartX(e.clientX);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  useEffect(() => {
-    if (isDragging) {
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
-      return () => {
-        window.removeEventListener("mousemove", handleMouseMove);
-        window.removeEventListener("mouseup", handleMouseUp);
-      };
-    }
-  }, [isDragging, startX]);
-
-  if (isAndroid) {
-    return (
-      <div
-        style={{
-          width: "100%",
-          height: "400px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
-          borderRadius: "8px",
-          cursor: isDragging ? "grabbing" : "grab",
-          transition: "all 0.3s ease",
-          transform: hovered ? "scale(1.05)" : "scale(1)",
-          boxShadow: hovered
-            ? "0 20px 40px rgba(100, 200, 255, 0.3)"
-            : "0 10px 20px rgba(0, 0, 0, 0.3)",
-          userSelect: "none",
-        }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onMouseDown={handleMouseDown}
-      >
-        <img
-          src="/desktop_pc/fallback.jpg"
-          alt="Gaming Desktop"
-          style={{
-            maxWidth: "80%",
-            maxHeight: "80%",
-            objectFit: "contain",
-            opacity: hovered ? 0.9 : 1,
-            transition: "opacity 0.3s ease",
-            transform: `rotateY(${rotation}deg)`,
-            transformStyle: "preserve-3d",
-          }}
-        />
-      </div>
-    );
-  }
+  if (isAndroid) return <ComputersFallback />;
 
   return (
     <Canvas
