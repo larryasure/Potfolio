@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 import Loader from "../Loader";
-import ComputersFallback from "./ComputersSVGFallback"; 
+import Fallback from "./Fallback";
 
 function Computers() {
   const computer = useGLTF("/desktop_pc/scene.gltf");
@@ -33,7 +33,7 @@ export default function ComputersCanvas() {
     setIsAndroid(/android/i.test(navigator.userAgent));
   }, []);
 
-  if (isAndroid) return <ComputersFallback />;
+  if (isAndroid) return <Fallback />;
 
   return (
     <Canvas

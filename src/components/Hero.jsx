@@ -2,13 +2,24 @@ import React, { useState, useEffect } from "react";
 import { styles } from "../styles";
 import { motion } from "framer-motion";
 import { ComputersCanvas } from "./canvas";
+import Fallback from "./canvas/Fallback";
 
 export default function Hero() {
-  const [isAndroid, setIsAndroid] = useState(false);
+  const [isAndroid, setIsAndroid] = useState(null);
 
   useEffect(() => {
-    setIsAndroid(/android/i.test(navigator.userAgent));
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isAndroidDevice = /android/.test(userAgent);
+    setIsAndroid(isAndroidDevice);
   }, []);
+
+  if (isAndroid === null) {
+    return null;
+  }
+
+  if (isAndroid) {
+    return <Fallback />;
+  }
 
   return (
     <>
@@ -41,23 +52,21 @@ export default function Hero() {
 
         <ComputersCanvas />
 
-        {!isAndroid && (
-          <div className="relative w-full flex items-center justify-center bottom-70 sm:bottom-50 md:bottom-18 lg:bottom-32 xl:bottom-18">
-            <a href="#about">
-              <div className="w-8 h-16 rounded-3xl border-3 border-gray-300 flex justify-center items-start p-2">
-                <motion.div
-                  className="w-3 h-3 bg-gray-400 rounded-full"
-                  animate={{ y: [0, 24, 0] }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                  }}
-                />
-              </div>
-            </a>
-          </div>
-        )}
+        <div className="relative w-full flex items-center justify-center bottom-70 sm:bottom-50 md:bottom-18 lg:bottom-32 xl:bottom-18">
+          <a href="#about">
+            <div className="w-8 h-16 rounded-3xl border-3 border-gray-300 flex justify-center items-start p-2">
+              <motion.div
+                className="w-3 h-3 bg-gray-400 rounded-full"
+                animate={{ y: [0, 24, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+              />
+            </div>
+          </a>
+        </div>
       </section>
     </>
   );

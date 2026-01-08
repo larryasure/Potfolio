@@ -9,6 +9,7 @@ import {
   Contact,
 } from "../components";
 import { styles } from "../styles";
+import Fallback from "../components/canvas/Fallback";
 
 export default function Home() {
   return (

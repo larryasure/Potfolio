@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 
-export default function AnimatedCTAButtons() {
+export default function Fallback() {
   const [hoveredButton, setHoveredButton] = useState(null);
 
   const typewriterVariants = {
@@ -39,7 +39,7 @@ export default function AnimatedCTAButtons() {
 
   const colorVariants = {
     animate: {
-      color: ["#915EFF", "#FF6B9D", "#915EFF"],
+      color: ["#915EFF", "#56ccf2", "#915EFF"],
       transition: { duration: 3, repeat: Infinity },
     },
   };
@@ -47,9 +47,26 @@ export default function AnimatedCTAButtons() {
   const text = "I bring ideas to life through code";
   const letters = text.split("");
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "`start" });
+    }
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-12 px-4">
-      {/* Typewriter Text with Color Change */}
+    <div className="flex flex-col items-center justify-start pt-4 min-h-screen gap-8 px-4">
+      <div className="text-center">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white">
+          Hi, I'm <span className="text-[#915EFF]">Lanre</span>
+        </h1>
+        <p className="text-lg sm:text-xl md:text-2xl mt-2 text-gray-300">
+          I build responsive websites, craft
+          <br className="sm:block hidden" />
+          interfaces and love learning new tech
+        </p>
+      </div>
+
       <motion.div
         className="text-center"
         variants={typewriterVariants}
@@ -62,18 +79,13 @@ export default function AnimatedCTAButtons() {
           animate="animate"
         >
           {letters.map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={letterVariants}
-              className={letter === " " ? "mx-2" : ""}
-            >
+            <motion.span key={index} variants={letterVariants}>
               {letter}
             </motion.span>
           ))}
         </motion.h2>
       </motion.div>
 
-      {/* Large CTA Buttons */}
       <motion.div
         className="flex flex-col sm:flex-row gap-6 w-full max-w-2xl"
         initial={{ opacity: 0, y: 30 }}
@@ -81,14 +93,14 @@ export default function AnimatedCTAButtons() {
         transition={{ duration: 0.8, delay: 1.2 }}
       >
         <motion.button
-          id="projects"
           variants={buttonVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
           onMouseEnter={() => setHoveredButton("work")}
           onMouseLeave={() => setHoveredButton(null)}
-          className="px-8 py-4 sm:px-10 sm:py-5 bg--to-r from-[#915EFF] to-[#FF6B9D] text-white rounded-xl font-bold text-lg sm:text-xl hover:shadow-2xl transition-all flex-1"
+          onClick={() => scrollToSection("projects")}
+          className="px-8 py-4 sm:px-10 sm:py-5 bg-gradient-to-r from-[#915EFF] to-[#FF6B9D] text-white rounded-xl font-bold text-lg sm:text-xl hover:shadow-2xl transition-all flex-1"
         >
           <motion.span
             animate={{
@@ -106,6 +118,7 @@ export default function AnimatedCTAButtons() {
           whileHover="hover"
           onMouseEnter={() => setHoveredButton("contact")}
           onMouseLeave={() => setHoveredButton(null)}
+          onClick={() => scrollToSection("contact")}
           className="px-8 py-4 sm:px-10 sm:py-5 border-2 border-[#915EFF] text-[#915EFF] rounded-xl font-bold text-lg sm:text-xl hover:bg-[#915EFF] hover:text-white transition-all flex-1"
         >
           <motion.span
