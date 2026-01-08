@@ -12,7 +12,6 @@ import {
   nodejs,
   mongodb,
   git,
-  figma,
   threejs,
   welcomeStudioImage,
   zairaImage,

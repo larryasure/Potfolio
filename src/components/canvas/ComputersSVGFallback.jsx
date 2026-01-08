@@ -80,8 +80,8 @@ export default function AnimatedCTAButtons() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.2 }}
       >
-        {/* View My Work Button */}
         <motion.button
+          id="projects"
           variants={buttonVariants}
           initial="hidden"
           animate="visible"
@@ -98,7 +98,7 @@ export default function AnimatedCTAButtons() {
           >
             View My Work
           </motion.span>
-        </motion.button>      
+        </motion.button>
         <motion.button
           variants={buttonVariants}
           initial="hidden"
