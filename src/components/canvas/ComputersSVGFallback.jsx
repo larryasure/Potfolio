@@ -1,160 +1,138 @@
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 
-import React, { useState, useEffect } from "react";
+export default function AnimatedCTAButtons() {
+  const [hoveredButton, setHoveredButton] = useState(null);
 
-function ComputersSVGFallback() {
+  const typewriterVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6, delay: 0.8 },
+    },
+    hover: {
+      scale: 1.1,
+      transition: { duration: 0.3 },
+    },
+  };
+
+  const colorVariants = {
+    animate: {
+      color: ["#915EFF", "#FF6B9D", "#915EFF"],
+      transition: { duration: 3, repeat: Infinity },
+    },
+  };
+
+  const text = "I bring ideas to life through code";
+  const letters = text.split("");
+
   return (
-    <svg
-      viewBox="0 0 400 300"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ width: "100%", maxWidth: "500px" }}
-    >
-      <defs>
-        <style>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-          }
-          @keyframes glow {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-          }
-          @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-          .monitor { animation: float 3s ease-in-out infinite; }
-          .keyboard { animation: float 3s ease-in-out infinite 0.2s; }
-          .glow-circle { animation: glow 2s ease-in-out infinite; }
-          .orbiting { animation: rotate 8s linear infinite; }
-        `}</style>
-        <radialGradient id="screenGradient" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#00d4ff" />
-          <stop offset="100%" stopColor="#0099ff" />
-        </radialGradient>
-      </defs>
-
-      {/* Background */}
-      <rect width="400" height="300" fill="#0f0f1e" />
-
-      {/* Orbiting circles background */}
-      <g className="orbiting" style={{ transformOrigin: "200px 150px" }}>
-        <circle cx="200" cy="80" r="3" fill="#00d4ff" opacity="0.4" />
-      </g>
-
-      {/* Monitor */}
-      <g className="monitor">
-        {/* Monitor stand */}
-        <rect x="150" y="200" width="100" height="15" fill="#1a1a2e" rx="3" />
-        <rect x="195" y="215" width="10" height="25" fill="#1a1a2e" />
-
-        {/* Monitor back */}
-        <rect x="80" y="80" width="240" height="130" fill="#1a1a2e" rx="8" />
-
-        {/* Screen bezel */}
-        <rect x="95" y="95" width="210" height="100" fill="#0a0a14" rx="5" />
-
-        {/* Screen glow */}
-        <rect
-          x="95"
-          y="95"
-          width="210"
-          height="100"
-          fill="url(#screenGradient)"
-          rx="5"
-          opacity="0.15"
-        />
-
-        {/* Screen content - animated lines */}
-        <line x1="110" y1="110" x2="270" y2="110" stroke="#00d4ff" strokeWidth="2" />
-        <line x1="110" y1="125" x2="250" y2="125" stroke="#00d4ff" strokeWidth="1.5" opacity="0.7" />
-        <line x1="110" y1="140" x2="240" y2="140" stroke="#00d4ff" strokeWidth="1" opacity="0.5" />
-        <line x1="110" y1="155" x2="260" y2="155" stroke="#00d4ff" strokeWidth="1.5" opacity="0.7" />
-        <line x1="110" y1="170" x2="230" y2="170" stroke="#00d4ff" strokeWidth="1" opacity="0.5" />
-
-        {/* Glowing circle on screen */}
-        <circle
-          cx="200"
-          cy="145"
-          r="15"
-          fill="none"
-          stroke="#64c8ff"
-          strokeWidth="2"
-          className="glow-circle"
-        />
-      </g>
-
-      {/* Keyboard */}
-      <g className="keyboard">
-        <rect x="70" y="240" width="260" height="40" fill="#1a1a2e" rx="4" />
-
-        {/* Keys pattern */}
-        <g fill="#0a0a14" opacity="0.6">
-          <rect x="80" y="250" width="8" height="8" rx="1" />
-          <rect x="95" y="250" width="8" height="8" rx="1" />
-          <rect x="110" y="250" width="8" height="8" rx="1" />
-          <rect x="125" y="250" width="8" height="8" rx="1" />
-          <rect x="305" y="250" width="8" height="8" rx="1" />
-
-          <rect x="80" y="265" width="8" height="8" rx="1" />
-          <rect x="95" y="265" width="8" height="8" rx="1" />
-          <rect x="110" y="265" width="8" height="8" rx="1" />
-          <rect x="305" y="265" width="8" height="8" rx="1" />
-        </g>
-
-        {/* Glow effect on keyboard */}
-        <rect
-          x="70"
-          y="240"
-          width="260"
-          height="40"
-          fill="#00d4ff"
-          rx="4"
-          opacity="0.05"
-        />
-      </g>
-
-      {/* Accent lights */}
-      <circle cx="60" cy="150" r="8" fill="#00d4ff" opacity="0.3" />
-      <circle cx="340" cy="150" r="8" fill="#00d4ff" opacity="0.3" />
-    </svg>
-  );
-}
-
-export default function ComputersCanvasFallback() {
-  const [hovered, setHovered] = useState(false);
-  const [isAndroid, setIsAndroid] = useState(false);
-
-  useEffect(() => {
-    setIsAndroid(/android/i.test(navigator.userAgent));
-  }, []);
-
-  if (isAndroid) {
-    return (
-      <div
-        style={{
-          width: "100%",
-          height: "400px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
-          borderRadius: "8px",
-          cursor: hovered ? "pointer" : "auto",
-          transition: "all 0.3s ease",
-          transform: hovered ? "scale(1.02)" : "scale(1)",
-          boxShadow: hovered
-            ? "0 20px 40px rgba(100, 200, 255, 0.3)"
-            : "0 10px 20px rgba(0, 0, 0, 0.3)",
-          padding: "20px",
-        }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+    <div className="flex flex-col items-center justify-center min-h-screen gap-12 px-4">
+      {/* Typewriter Text with Color Change */}
+      <motion.div
+        className="text-center"
+        variants={typewriterVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <ComputersSVGFallback />
-      </div>
-    );
-  }
+        <motion.h2
+          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8"
+          variants={colorVariants}
+          animate="animate"
+        >
+          {letters.map((letter, index) => (
+            <motion.span
+              key={index}
+              variants={letterVariants}
+              className={letter === " " ? "mx-2" : ""}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </motion.h2>
+      </motion.div>
 
-  // Return your original 3D Canvas here - unchanged
-  return null;
+      {/* Large CTA Buttons */}
+      <motion.div
+        className="flex flex-col sm:flex-row gap-6 w-full max-w-2xl"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.2 }}
+      >
+        {/* View My Work Button */}
+        <motion.button
+          variants={buttonVariants}
+          initial="hidden"
+          animate="visible"
+          whileHover="hover"
+          onMouseEnter={() => setHoveredButton("work")}
+          onMouseLeave={() => setHoveredButton(null)}
+          className="px-8 py-4 sm:px-10 sm:py-5 bg--to-r from-[#915EFF] to-[#FF6B9D] text-white rounded-xl font-bold text-lg sm:text-xl hover:shadow-2xl transition-all flex-1"
+        >
+          <motion.span
+            animate={{
+              letterSpacing: hoveredButton === "work" ? "2px" : "0px",
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            View My Work
+          </motion.span>
+        </motion.button>      
+        <motion.button
+          variants={buttonVariants}
+          initial="hidden"
+          animate="visible"
+          whileHover="hover"
+          onMouseEnter={() => setHoveredButton("contact")}
+          onMouseLeave={() => setHoveredButton(null)}
+          className="px-8 py-4 sm:px-10 sm:py-5 border-2 border-[#915EFF] text-[#915EFF] rounded-xl font-bold text-lg sm:text-xl hover:bg-[#915EFF] hover:text-white transition-all flex-1"
+        >
+          <motion.span
+            animate={{
+              letterSpacing: hoveredButton === "contact" ? "2px" : "0px",
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            Contact Me
+          </motion.span>
+        </motion.button>
+      </motion.div>
+
+      <motion.div
+        className="absolute top-20 left-10 w-40 h-40 bg-[#915EFF] rounded-full opacity-10 blur-3xl"
+        animate={{
+          y: [0, -30, 0],
+        }}
+        transition={{ duration: 5, repeat: Infinity }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-40 h-40 bg-[#FF6B9D] rounded-full opacity-10 blur-3xl"
+        animate={{
+          y: [0, 30, 0],
+        }}
+        transition={{ duration: 5, repeat: Infinity }}
+      />
+    </div>
+  );
 }

@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 import Loader from "../Loader";
-import ComputersFallback from "./ComputersSVGFallback"; // import it
+import ComputersFallback from "./ComputersSVGFallback"; 
 
 function Computers() {
   const computer = useGLTF("/desktop_pc/scene.gltf");
