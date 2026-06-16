@@ -1,24 +1,26 @@
 import {
-  mobile,
   backend,
   creator,
-  web,
-  javascript,
-  html,
   css,
+  Diary,
+  git,
+  html,
+  javascript,
+  listraceImage,
+  MiroNews,
+  mobile,
+  mongodb,
+  movieAppImage,
+  nodejs,
+  portfolioImage,
+  PrimePack,
   reactjs,
   redux,
+  Sloth,
   tailwind,
-  nodejs,
-  mongodb,
-  git,
   threejs,
-  welcomeStudioImage,
+  web,
   zairaImage,
-  movieAppImage,
-  listraceImage,
-  gravityImage,
-  portfolioImage,
 } from "../assets";
 
 export const navLinks = [
@@ -158,86 +160,244 @@ const testimonials = [
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
+// const projectss = [
+//   {
+//     name: "Gravity Trading Landing page",
+//     description:
+//       "Automated quantitative trading software providing 24/7 liquidity across 170+ crypto assets and exchanges.",
+//     tags: [
+//       { name: "react", color: "blue-text-gradient" },
+//       { name: "framer-motion", color: "green-text-gradient" },
+//       { name: "tailwind", color: "pink-text-gradient" },
+//     ],
+//     image: gravityImage,
+//     source_code_link: "https://github.com/larryasure",
+//   },
+
+//   {
+//     name: "MyDaily Notes",
+//     description:
+//       "Responsive notes management application allowing users to create, edit, and manage personal notes with clean UI architecture, reusable React components, and secure backend integration.",
+//     tags: [
+//       { name: "react", color: "blue-text-gradient" },
+//       { name: "django", color: "green-text-gradient" },
+//       { name: "sqlite", color: "pink-text-gradient" },
+//       { name: "tailwind", color: "orange-text-gradient" },
+//     ],
+//     image: Diary,
+//     live_link: "https://mydaily-notes.vercel.app/",
+//     source_code_link: "https://github.com/yourusername",
+//   },
+
+//   {
+//     name: "PrimePack Ecommerce",
+//     description:
+//       "Modern ecommerce platform featuring product management, authentication, cart functionality, payment integration, and scalable REST API architecture built with React.js, Django, and PostgreSQL.",
+//     tags: [
+//       { name: "react", color: "blue-text-gradient" },
+//       { name: "django-rest", color: "green-text-gradient" },
+//       { name: "postgresql", color: "pink-text-gradient" },
+//       { name: "tailwind", color: "orange-text-gradient" },
+//     ],
+//     image: PrimePack,
+//     source_code_link: "https://github.com/yourusername",
+//   },
+
+//   {
+//     name: "PrimePack Ecommerce",
+//     description:
+//       "Modern ecommerce platform featuring product management, authentication, cart functionality, payment integration, and scalable REST API architecture built with React.js, Django, and PostgreSQL.",
+//     tags: [
+//       { name: "react", color: "blue-text-gradient" },
+//       { name: "django-rest", color: "green-text-gradient" },
+//       { name: "postgresql", color: "pink-text-gradient" },
+//       { name: "tailwind", color: "orange-text-gradient" },
+//     ],
+//     image: Sloth,
+//     source_code_link: "https://github.com/yourusername",
+//   },
+
+//   {
+//     name: "PrimePack ",
+//     description:
+//       "Modern ecommerce platform featuring product management, authentication, cart functionality, payment integration, and scalable REST API architecture built with React.js, Django, and PostgreSQL.",
+//     tags: [
+//       { name: "react", color: "blue-text-gradient" },
+//       { name: "django-rest", color: "green-text-gradient" },
+//       { name: "postgresql", color: "pink-text-gradient" },
+//       { name: "tailwind", color: "orange-text-gradient" },
+//     ],
+//     image: MiroNews,
+//     source_code_link: "https://github.com/yourusername",
+//   },
+
+//   {
+//     name: "Zaira Restaurant",
+//     description:
+//       "Modern restaurant website with food categories, menu browsing, and seamless ordering experience.",
+//     tags: [
+//       { name: "react", color: "blue-text-gradient" },
+//       { name: "tailwind", color: "green-text-gradient" },
+//       { name: "lucide-react", color: "pink-text-gradient" },
+//     ],
+//     image: zairaImage,
+//     source_code_link: "https://github.com/larryasure",
+//   },
+
+//   {
+//     name: "Listrace",
+//     description:
+//       "Comprehensive discovery platform to find and explore restaurants, hotels, destinations, and local businesses in one place.",
+//     tags: [
+//       { name: "react", color: "blue-text-gradient" },
+//       { name: "tailwind", color: "green-text-gradient" },
+//       { name: "lucide-react", color: "pink-text-gradient" },
+//     ],
+//     image: listraceImage,
+//     source_code_link: "https://github.com/larryasure",
+//   },
+
+//   {
+//     name: "Movie App",
+//     description:
+//       "Movie discovery app powered by TMDB API. Browse, search, and discover movies with ratings, languages, and release dates.",
+//     tags: [
+//       { name: "react", color: "blue-text-gradient" },
+//       { name: "tmdb-api", color: "green-text-gradient" },
+//       { name: "firebase", color: "blue-text-gradient" },
+//       { name: "tailwind", color: "pink-text-gradient" },
+//     ],
+//     image: movieAppImage,
+//     source_code_link: "https://github.com/larryasure",
+//   },
+
+//   {
+//     name: "Portfolio",
+//     description:
+//       "My personal portfolio website showcasing all my projects and skills.",
+//     tags: [
+//       { name: "react", color: "blue-text-gradient" },
+//       { name: "three.js", color: "green-text-gradient" },
+//       { name: "react drei", color: "pink-text-gradient" },
+//       { name: "tailwind", color: "pink-text-gradient" },
+//     ],
+//     image: portfolioImage,
+//     source_code_link: "https://github.com/larryasure",
+//   },
+// ];
+
 const projectss = [
   {
-    name: "Welcome Studio",
+    name: "PrimePack Ecommerce",
     description:
-      "Webinar platform for marketers with interactive hosting and engagement tools designed to drive revenue.",
+      "Full-stack ecommerce platform for gadgets, electronics, beauty products, jewelry, and accessories featuring authentication, cart functionality, product management, and scalable REST API architecture.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
-      { name: "framer-motion", color: "green-text-gradient" },
-      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "django-rest", color: "green-text-gradient" },
+      { name: "postgresql", color: "pink-text-gradient" },
+      { name: "tailwind", color: "orange-text-gradient" },
     ],
-    image: welcomeStudioImage,
-    source_code_link: "https://github.com/larryasure",
+
+    image: PrimePack,
+    source_code_link: "https://github.com/yourusername",
   },
 
   {
-    name: "Gravity Trading Platform",
+    name: "MyDaily Notes",
     description:
-      "Automated quantitative trading software providing 24/7 liquidity across 170+ crypto assets and exchanges.",
+      "Responsive diary and notes management application allowing users to create, manage, and delete personal notes with reusable React components and secure backend integration.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
-      { name: "framer-motion", color: "green-text-gradient" },
-      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "django", color: "green-text-gradient" },
+      { name: "sqlite", color: "pink-text-gradient" },
+      { name: "tailwind", color: "orange-text-gradient" },
     ],
-    image: gravityImage,
-    source_code_link: "https://github.com/larryasure",
+    image: Diary,
+    live_link: "https://mydaily-notes.vercel.app/",
+    source_code_link: "https://github.com/yourusername",
+  },
+
+  {
+    name: "MiroNews",
+    description:
+      "Modern news platform delivering categorized and trending news content through responsive UI design, optimized API integration, and seamless content browsing experience.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "news-api", color: "green-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "firebase", color: "orange-text-gradient" },
+    ],
+    image: MiroNews,
+    source_code_link: "https://github.com/yourusername",
+  },
+
+  {
+    name: "Sloth Transaction Tracker",
+    description:
+      "Expense and income tracking application enabling users to manage transactions, categorize spending, and filter financial records with secure MongoDB backend integration.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "mongodb", color: "green-text-gradient" },
+      { name: "nodejs", color: "pink-text-gradient" },
+      { name: "tailwind", color: "orange-text-gradient" },
+    ],
+    image: Sloth,
+    source_code_link: "https://github.com/yourusername",
   },
 
   {
     name: "Zaira Restaurant",
     description:
-      "Modern restaurant website with food categories, menu browsing, and seamless ordering experience.",
+      "Modern restaurant website featuring menu exploration, food categories, responsive layouts, and engaging user experience for seamless online food discovery.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "tailwind", color: "green-text-gradient" },
       { name: "lucide-react", color: "pink-text-gradient" },
     ],
     image: zairaImage,
-    source_code_link: "https://github.com/larryasure",
+    source_code_link: "https://github.com/yourusername",
   },
 
   {
     name: "Listrace",
     description:
-      "Comprehensive discovery platform to find and explore restaurants, hotels, destinations, and local businesses in one place.",
+      "Business discovery platform helping users explore restaurants, hotels, destinations, and local services through intuitive navigation and responsive frontend architecture.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "tailwind", color: "green-text-gradient" },
-      { name: "lucide-react", color: "pink-text-gradient" },
+      { name: "firebase", color: "pink-text-gradient" },
     ],
     image: listraceImage,
-    source_code_link: "https://github.com/larryasure",
+    source_code_link: "https://github.com/yourusername",
   },
 
   {
     name: "Movie App",
     description:
-      "Movie discovery app powered by TMDB API. Browse, search, and discover movies with ratings, languages, and release dates.",
+      "Movie discovery application powered by TMDB API enabling users to browse trending movies, search titles, and explore ratings, release dates, and movie details.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "tmdb-api", color: "green-text-gradient" },
-      { name: "firebase", color: "blue-text-gradient" },
+      { name: "firebase", color: "orange-text-gradient" },
       { name: "tailwind", color: "pink-text-gradient" },
     ],
     image: movieAppImage,
-    source_code_link: "https://github.com/larryasure",
+    source_code_link: "https://github.com/yourusername",
   },
 
   {
-    name: "Portfolio",
+    name: "3D Portfolio Website",
     description:
-      "My personal portfolio website showcasing all my projects and skills.",
+      "Interactive developer portfolio showcasing projects and technical skills through immersive Three.js animations, responsive layouts, and modern frontend architecture.",
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "three.js", color: "green-text-gradient" },
-      { name: "react drei", color: "pink-text-gradient" },
-      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "framer-motion", color: "pink-text-gradient" },
+      { name: "tailwind", color: "orange-text-gradient" },
     ],
     image: portfolioImage,
-    source_code_link: "https://github.com/larryasure",
+    source_code_link: "https://github.com/yourusername",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projectss };
+export { experiences, projectss, services, technologies, testimonials };
