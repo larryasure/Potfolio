@@ -21,6 +21,7 @@ export default function Experience() {
             style={{ backgroundColor: experience.iconBg }}
           >
             <img
+              loading="lazy"
               src={experience.icon}
               alt={experience.company_name}
               className="w-9 h-9 object-contain"

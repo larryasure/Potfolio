@@ -64,6 +64,7 @@ const BallCanvas = ({ icon }) => {
         onMouseLeave={() => setHovered(false)}
       >
         <img
+          loading="lazy"
           src={icon}
           alt="tech"
           style={{

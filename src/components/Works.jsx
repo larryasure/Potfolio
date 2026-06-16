@@ -24,6 +24,7 @@ const ProjectCard = ({
       >
         <div className="relative w-full">
           <img
+            loading="lazy"
             src={image}
             alt={name}
             className="w-full rounded-lg cursor-pointer object-cover"
@@ -34,6 +35,7 @@ const ProjectCard = ({
               className="black-gradient w-10 h-10 rounded-full justify-center cursor-pointer items-center flex"
             >
               <img
+                loading="lazy"
                 src={github}
                 alt={github}
                 className="w-1/2 h-1/2 object-contain"

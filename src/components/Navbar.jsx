@@ -39,6 +39,7 @@ export default function Navbar() {
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center ">
           <img
+            loading="lazy"
             src={toggle ? close : menu}
             alt="menu"
             className="w-7 h-7 "

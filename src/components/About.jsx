@@ -13,7 +13,7 @@ const ServiceCard = ({ title, icon, index }) => {
         className="w-full rounded-[20px] cursor-pointer bg-gray-800 p-px"
       >
         <div className="rounded-[20px] py-5 px-12 flex justify-center flex-col items-center gap-4 h-96 ">
-          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+          <img loading="lazy" src={icon} alt={title} className="w-16 h-16 object-contain" />
           <h3 className="text-white text-[18px] font-bold text-center">
             {title}
           </h3>

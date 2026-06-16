@@ -27,6 +27,7 @@ export default function Feedbacks() {
               <p className='text-gray-300 tracking-wider text-[16px]'>{testimonial.testimonial}</p>
               <div className='mt-7 flex items-center gap-4'>
                 <img 
+                  loading='lazy'
                   src={testimonial.image} 
                   alt={testimonial.name} 
                   className='w-10 h-10 rounded-full object-cover'
