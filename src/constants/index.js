@@ -174,7 +174,7 @@ const projectss = [
     ],
 
     image: PrimePack,
-    source_code_link: "https://github.com/yourusername",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -190,7 +190,7 @@ const projectss = [
 
     image: Diary,
     live_link: "https://mydaily-notes.vercel.app/",
-    source_code_link: "https://github.com/yourusername",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -204,7 +204,7 @@ const projectss = [
       { name: "firebase", color: "orange-text-gradient" },
     ],
     image: MiroNews,
-    source_code_link: "https://github.com/yourusername",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -218,7 +218,7 @@ const projectss = [
       { name: "tailwind", color: "orange-text-gradient" },
     ],
     image: Sloth,
-    source_code_link: "https://github.com/yourusername",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -231,7 +231,7 @@ const projectss = [
       { name: "lucide-react", color: "pink-text-gradient" },
     ],
     image: zairaImage,
-    source_code_link: "https://github.com/yourusername",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -244,7 +244,7 @@ const projectss = [
       { name: "firebase", color: "pink-text-gradient" },
     ],
     image: listraceImage,
-    source_code_link: "https://github.com/yourusername",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -258,7 +258,7 @@ const projectss = [
       { name: "tailwind", color: "pink-text-gradient" },
     ],
     image: movieAppImage,
-    source_code_link: "https://github.com/yourusername",
+    source_code_link: "https://github.com/larryasure",
   },
 
   {
@@ -272,7 +272,7 @@ const projectss = [
       { name: "tailwind", color: "orange-text-gradient" },
     ],
     image: portfolioImage,
-    source_code_link: "https://github.com/yourusername",
+    source_code_link: "https://github.com/larryasure",
   },
 ];
 
