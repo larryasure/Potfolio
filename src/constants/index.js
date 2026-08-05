@@ -20,7 +20,6 @@ import {
   reactjs,
   Sloth,
   tailwind,
-  threejs,
   web,
   zairaImage,
 } from "../assets";
@@ -87,7 +86,6 @@ const technologies = [
     name: "Tailwind CSS",
     icon: tailwind,
   },
-
   {
     name: "MongoDB",
     icon: mongodb,
@@ -97,7 +95,6 @@ const technologies = [
     name: "postgresql",
     icon: postgresql,
   },
-
 
   {
     name: "python",
