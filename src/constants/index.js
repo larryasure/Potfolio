@@ -3,6 +3,8 @@ import {
   creator,
   css,
   Diary,
+  django,
+  figma,
   git,
   html,
   javascript,
@@ -11,11 +13,11 @@ import {
   mobile,
   mongodb,
   movieAppImage,
-  nodejs,
   portfolioImage,
+  postgresql,
   PrimePack,
+  python,
   reactjs,
-  redux,
   Sloth,
   tailwind,
   threejs,
@@ -45,20 +47,24 @@ export const navLinks = [
 
 const services = [
   {
-    title: "React & Three.js Developer",
+    title: "Frontend Development",
     icon: web,
+    text: "Building responsive and interactive user interfaces using React, JavaScript, Tailwind CSS, and modern frontend tools.",
   },
   {
-    title: "3D Web Experiences",
-    icon: mobile,
-  },
-  {
-    title: "Responsive UI Design",
+    title: "Backend Development",
     icon: backend,
+    text: "Designing APIs, authentication systems, database structures, and backend services with Django and REST Framework.",
   },
   {
-    title: "Full-Stack Development",
+    title: "Full-Stack Applications",
     icon: creator,
+    text: "Developing complete web applications by connecting frontend experiences with reliable backend systems.",
+  },
+  {
+    title: "UI & Interactive Experiences",
+    icon: mobile,
+    text: "Creating engaging digital experiences with animations, Three.js, and modern UI design principles.",
   },
 ];
 
@@ -71,65 +77,80 @@ const technologies = [
     name: "CSS 3",
     icon: css,
   },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
 
   {
     name: "React JS",
     icon: reactjs,
   },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
+
   {
     name: "Tailwind CSS",
     icon: tailwind,
   },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
+
   {
     name: "MongoDB",
     icon: mongodb,
   },
+
   {
-    name: "Three JS",
-    icon: threejs,
+    name: "postgresql",
+    icon: postgresql,
+  },
+
+
+  {
+    name: "python",
+    icon: python,
+  },
+
+  {
+    name: "django",
+    icon: django,
+  },
+
+  {
+    name: "figma",
+    icon: figma,
   },
   {
     name: "git",
     icon: git,
   },
 ];
+
 const experiences = [
   {
     title: "Full Stack Developer",
-    company_name: "Personal Projects (Production Builds)",
+    company_name: "Independent Software Development",
     icon: reactjs,
     iconBg: "#383E56",
-    date: "August 2025 - Present",
-    points: [
-      "Developed multiple full-stack web applications including an ecommerce platform, blog system, and diary management app using React.js and Django REST Framework.",
-      "Designed and integrated RESTful APIs for authentication, CRUD operations, and dynamic data handling across applications.",
-      "Implemented responsive UI systems using Tailwind CSS and modern frontend architecture principles.",
-      "Worked with PostgreSQL, SQLite, and MongoDB to design and manage application databases across different projects.",
-    ],
-  },
-  {
-    title: "Frontend & Backend Developer",
-    company_name: "Independent Development Work",
-    icon: javascript,
-    iconBg: "#E6DEDD",
     date: "2025 - Present",
     points: [
-      "Built and deployed production-ready web applications with focus on performance, scalability, and user experience.",
-      "Integrated third-party APIs and authentication systems into real-world applications.",
-      "Developed reusable UI components and optimized frontend structure for maintainability.",
-      "Collaborated with design tools and version control systems (Git/GitHub) to manage project workflows.",
+      "Built full-stack web applications using React.js, Django REST Framework, and modern web technologies.",
+
+      "Developed scalable backend systems including REST APIs, authentication workflows, database models, and business logic.",
+
+      "Created responsive frontend interfaces with reusable components, optimized layouts, and modern UI patterns.",
+
+      "Integrated third-party services including APIs, payment systems, and external tools into production applications.",
+    ],
+  },
+
+  {
+    title: "Frontend Engineering",
+    company_name: "Independent Development Projects",
+    icon: javascript,
+    iconBg: "#E6DEDD",
+    date: "2024 - Present",
+    points: [
+      "Developed interactive user interfaces using React, JavaScript, Tailwind CSS,3D and Framer Motion.",
+
+      "Focused on creating responsive designs that provide consistent experiences across desktop and mobile devices.",
+
+      "Built reusable component systems to improve development speed and maintain application consistency.",
+
+      "Applied modern frontend practices including state management, API integration, and performance optimization.",
     ],
   },
 ];

@@ -8,23 +8,22 @@ import mobile from "./mobile.png";
 import web from "./web.png";
 
 import css from "./tech/css.png";
+import django from "./tech/django.png";
+import Djangorest from "./tech/Djangorest.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
+import Framer from "./tech/FramerMotion.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.svg";
+import JavaScriptE6 from "./tech/javascriptE6.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
+import postgresql from "./tech/postgresql.jfif";
+import python from "./tech/Python-logo.png";
 import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.svg";
-import typescript from "./tech/typescript.png";
-
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
 
 import Diary from "./Diary.png";
 import gravityImage from "./gravityImage.png";
@@ -43,33 +42,33 @@ export {
   creator,
   css,
   Diary,
+  django,
+  Djangorest,
   docker,
   figma,
+  Framer,
   git,
   github,
   gravityImage,
   html,
   javascript,
+  JavaScriptE6,
   listraceImage,
   logo,
   menu,
-  meta,
   MiroNews,
   mobile,
   mongodb,
   movieAppImage,
   nodejs,
   portfolioImage,
+  postgresql,
   PrimePack,
+  python,
   reactjs,
-  redux,
-  shopify,
   Sloth,
-  starbucks,
   tailwind,
-  tesla,
   threejs,
-  typescript,
   web,
   welcomeStudioImage,
   zairaImage,

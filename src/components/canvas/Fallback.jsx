@@ -55,20 +55,20 @@ export default function Fallback() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start pt-8 sm:pt-12 md:pt-16 min-h-screen gap-6 sm:gap-8 px-4 sm:px-6">
+    <div className="flex flex-col items-center justify-start pt-8 sm:pt-12 md:pt-16 min-h-screen gap-6 sm:gap-8 px-4 sm:px-6 p-4">
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight sm:leading-snug md:leading-normal">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl my-8 font-bold text-white leading-tight sm:leading-snug md:leading-normal">
           Hi, I'm <span className="text-[#915EFF]">Lanre</span>
         </h1>
-        <p className="text-base sm:text-lg md:text-2xl mt-3 sm:mt-4 text-gray-300 leading-relaxed">
-          I build responsive websites, craft
+        <p className="text-base sm:text-lg md:text-2xl mt-6 sm:mt-6 text-gray-300 leading-relaxed">
+          I build responsive websites, craft {" "}
           <br className="hidden sm:block" />
-          interfaces and love learning new tech
+          interfaces and love learning 
         </p>
       </motion.div>
 
@@ -128,7 +128,7 @@ export default function Fallback() {
           onMouseEnter={() => setHoveredButton("contact")}
           onMouseLeave={() => setHoveredButton(null)}
           onClick={() => scrollToSection("contact")}
-          className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#915EFF] text-[#915EFF] rounded-lg sm:rounded-xl font-semibold sm:font-bold text-base sm:text-lg hover:bg-[#915EFF] hover:text-white transition-colors flex-1 active:bg-[#915EFF] active:text-white"
+          className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#915EFF] text-[#915EFF] rounded-lg sm:rounded-xl font-semibold sm:font-bold text-base sm:text-lg hover:bg-[#915EFF] hover:text-white transition-colors flex-1 active:bg-[#915EFF] active:text-white "
         >
           <motion.span
             animate={{

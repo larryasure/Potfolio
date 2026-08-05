@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { styles } from "../styles";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import Fallback from "./canvas/Fallback";
 
@@ -38,14 +38,16 @@ export default function Hero() {
               Hi, I'm <span className="text-[#915EFF]">Lanre</span>
             </h1>
             <motion.p
-              className={`${styles.heroSubText} mt-2 text-white`}
+              className={`${styles.myText} mt-1 text-white`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              I build responsive websites, craft
-              <br className="sm:block hidden" />
-              interfaces and love learning new tech
+              A Full Stack Developer Building modern web applications from idea
+              to production.
+              <br className="sm:block hidden" />I specialize in React, Django,
+              and REST APIs, creating responsive user experiences backed by
+              secure and scalable backend systems.
             </motion.p>
           </div>
         </div>
@@ -54,9 +56,9 @@ export default function Hero() {
 
         <div className="relative w-full flex items-center justify-center bottom-70 sm:bottom-50 md:bottom-18 lg:bottom-32 xl:bottom-18">
           <a href="#about">
-            <div className="w-8 h-16 rounded-3xl border-3 border-gray-300 flex justify-center items-start p-2">
+            <div className="w-8 h-14 rounded-3xl border-3 border-gray-200 flex justify-center items-start p-2">
               <motion.div
-                className="w-3 h-3 bg-gray-400 rounded-full"
+                className="w-3 h-3 bg-[#9365f6] rounded-full"
                 animate={{ y: [0, 24, 0] }}
                 transition={{
                   duration: 1.5,
